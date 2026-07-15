@@ -17,6 +17,7 @@ async function runMigrations() {
       user: process.env.DB_USER || 'root',
       password: process.env.DB_PASSWORD || '',
       multipleStatements: true,
+      ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: true } : false,
     });
 
     for (const migration of MIGRATIONS) {

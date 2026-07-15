@@ -17,6 +17,7 @@ async function run() {
       user: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       multipleStatements: true,
+      ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: true } : false,
     });
 
     await connection.query(`CREATE DATABASE IF NOT EXISTS \`${process.env.DB_NAME}\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci`);
