@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-gray-900 font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-3 rounded font-semibold
+           hover:bg-primary-600 transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed
+           active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-white px-6 py-3 rounded font-semibold
+           hover:bg-secondary-600 transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary px-6 py-3 rounded font-semibold
+           hover:bg-primary hover:text-white transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-ghost {
+    @apply text-gray-600 px-4 py-2 rounded font-medium
+           hover:bg-gray-100 transition-all duration-200;
+  }
+
+  .btn-danger {
+    @apply bg-red-500 text-white px-6 py-3 rounded font-semibold
+           hover:bg-red-600 transition-all duration-200;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 border border-gray-200 rounded
+           focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary
+           placeholder:text-gray-400 transition-all duration-200
+           bg-white;
+  }
+
+  .card {
+    @apply bg-surface rounded-card shadow-subtle border border-gray-100;
+  }
+
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .chip {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
+           bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors cursor-pointer;
+  }
+
+  .chip-active {
+    @apply bg-primary text-white;
+  }
+
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 py-6;
+  }
+
+  .section-title {
+    @apply text-2xl font-bold font-heading text-gray-900;
+  }
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #D1D5DB transparent;
+}
+
+*::-webkit-scrollbar { width: 6px; }
+*::-webkit-scrollbar-track { background: transparent; }
+*::-webkit-scrollbar-thumb { background-color: #D1D5DB; border-radius: 20px; }
